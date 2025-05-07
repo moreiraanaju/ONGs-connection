@@ -1,0 +1,1 @@
+Branch criada com o objetivo de analisar dados gerados na plataforma. Futuramente planejo usar SQL e Python para analisar padrões de uso e comportamento dos usuários.
