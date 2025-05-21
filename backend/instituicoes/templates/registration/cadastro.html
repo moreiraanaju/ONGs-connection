@@ -1,0 +1,8 @@
+<h2>Cadastro de Usuário</h2>
+<form method="post">
+    {% csrf_token %}  <!--Insere token csrf, meidda de segurança obrigatória para formularios q usam post-->
+    {{ form.as_p }} <!--O método .as_p exibe os campos do formulário como elementos HTML <p>-->
+    <button type="submit">Cadastrar</button>
+</form>
+
+<a href="{% url 'login' %}">Já tem conta? Faça login</a>

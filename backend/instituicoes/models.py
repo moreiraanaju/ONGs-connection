@@ -1,5 +1,19 @@
 from django.db import models
+from django.contrib.auth.models import User
 
+
+class Perfil(models.Model):
+    TIPOS = [
+        ('ADM', 'Administrador'),
+        ('ONG', 'ONG'),
+        ('DOADOR', 'Doador'),
+    ]
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    tipo = models.CharField(max_length=10, choices=TIPOS, default='DOADOR')
+
+    def __str__(self):
+        return f"{self.user.username} ({self.get_tipo_display()})"
 
 class Categoria(models.Model):
     nome = models.CharField(max_length=50)
