@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+<h1>Bem-vindo, {{ user.username }}</h1>
+
+{% if user.perfil.tipo == 'ONG' %}
+    <a href="{% url 'painel_ong' %}">Acessar painel da ONG</a>
+{% elif user.perfil.tipo == 'DOADOR' %}
+  <p>Veja projetos disponíveis para doação.</p>
+{% else %}
+  <p>Bem-vindo, administrador!</p>
+{% endif %}
+
+</body>
+</html>

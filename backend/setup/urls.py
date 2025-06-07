@@ -22,10 +22,11 @@ from instituicoes.views import CadastroUsuarioView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('instituicoes/', include('instituicoes.urls')),
+    path('', include('instituicoes.urls')),
+    path('api/', include('instituicoes.urls_api')),  
 
     path('login/', auth_views.LoginView.as_view(template_name = 'registration/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
     path('cadastro/', CadastroUsuarioView.as_view(), name='cadastro'),
-
+    
 ]
