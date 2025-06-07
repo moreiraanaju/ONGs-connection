@@ -56,7 +56,6 @@ class Doador(models.Model):
     nome = models.CharField(max_length=100)
     email = models.EmailField(max_length=100, unique=True)
     telefone = models.CharField(max_length=20, blank=True, null=True)
-    cpf_cnpj = models.CharField(max_length=14, unique=True, blank=True, null=True)
 
     TIPO_CHOICES = [
         ('Pessoa Física', 'Pessoa Física'),
@@ -64,6 +63,7 @@ class Doador(models.Model):
     ]
     tipo = models.CharField(max_length=20, choices=TIPO_CHOICES)
 
+    cpf_cnpj = models.CharField(max_length=14, unique=True, blank=True, null=True)
     data_nascimento = models.DateField(blank=True, null=True)
     endereco = models.CharField(max_length=200, blank=True, null=True)
     data_cadastro = models.DateTimeField(auto_now_add=True)
