@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doe Agora - ONG Connection</title>
+  <meta name="keywords" content="ONG, doações, solidariedade, causas sociais, PIX, boleto, transferência" />
+  <meta name="description" content="Faça sua doação anônima à ONG Connection e ajude a transformar vidas com solidariedade e impacto social." />
+  <meta name="author" content="ONG Connection" />
+  <link rel="icon" href="imagens/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/estilo.css" />
+  <link rel="stylesheet" href="/css/Doar.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <div class="container">
+      <div class="logo-container">
+        <img src="../imagens/conection-logo.png" alt="Logo da ONG Connection" class="logo-img" />
+        <h1 class="site-title">ONG Connection</h1>
+      </div>
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="../index.html">Início</a>
+        <a href="Sobre.html">Sobre</a>
+        <a href="Instituicoes.html">Instituições(ONGs)</a>
+        <a href="Doar.html" class="active">Doe Agora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doar-page">
+    <section class="hero" data-aos="fade-up">
+      <div class="container">
+        <h1>Doe Agora</h1>
+        <p class="hero-subtitle">Sua doação faz a diferença na vida de milhares de pessoas</p>
+      </div>
+    </section>
+
+    <section class="doacao-content" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
+        <p class="intro-text">Na ONG Connection, cada doação é um passo para transformar vidas. Seja por PIX, boleto ou transferência, sua contribuição apoia projetos em educação, saúde, meio ambiente e assistência social.</p>
+
+        <div class="doacao-methods">
+          <h2>Como Doar</h2>
+          <div class="methods-grid">
+            <div class="method-card" data-aos="fade-right">
+              <h3>PIX</h3>
+              <p>Faça sua doação instantânea usando nossa chave PIX: <strong>contato@ongconnection.com</strong>.</p>
+              <p>Após a transferência, envie o comprovante para <a href="mailto:contato@ongconnection.com">contato@ongconnection.com</a>.</p>
+            </div>
+            <div class="method-card" data-aos="fade-left">
+              <h3>Boleto</h3>
+              <p>Solicite um boleto personalizado entrando em contato conosco. Prazos de compensação podem variar.</p>
+              <p>Entre em contato: <a href="https://wa.me/5548999999999">+55 48 99999-9999</a>.</p>
+            </div>
+            <div class="method-card" data-aos="fade-right">
+              <h3>Transferência Bancária</h3>
+              <p>Realize uma transferência para nossa conta oficial. Dados bancários disponíveis mediante solicitação.</p>
+              <p>Contate-nos: <a href="mailto:contato@ongconnection.com">contato@ongconnection.com</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="doacao-form" data-aos="fade-up" data-aos-delay="200">
+          <h2>Faça Sua Doação</h2>
+          <form id="doacao-form" novalidate>
+            <div class="form-group">
+              <label for="doacao-valor">Valor da Doação (R$):</label>
+              <input type="number" id="doacao-valor" name="valor" min="1" step="0.01" placeholder="Ex: 50.00" required />
+              <span id="doacao-valor-error" class="error"></span>
+            </div>
+            <div class="form-group">
+              <label for="doacao-metodo">Método de Pagamento:</label>
+              <select id="doacao-metodo" name="metodo_pagamento" required>
+                <option value="">Selecione</option>
+                <option value="PIX">PIX</option>
+                <option value="Boleto">Boleto</option>
+                <option value="Transferência">Transferência Bancária</option>
+              </select>
+              <span id="doacao-metodo-error" class="error"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Doação</button>
+          </form>
+        </div>
+
+        <div class="impact-section" data-aos="fade-up" data-aos-delay="300">
+          <h2>O Impacto da Sua Doação</h2>
+          <p>Sua contribuição financia projetos que transformam comunidades. Cada real doado ajuda a fornecer educação para crianças, cuidados para idosos, proteção ao meio ambiente e apoio a famílias em vulnerabilidade.</p>
+          <a href="Instituicoes.html" class="btn btn-secondary">Conheça Nossos Projetos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="social-icons" data-aos="fade-right">
+        <h2>Contato</h2>
+        <a href="https://wa.me/5548999999999" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+        <a href="mailto:exemplo@email.com" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="E-mail"></a>
+        <a href="https://www.facebook.com/suaPagina" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/suaPagina" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
+      </div>
+      <div class="mapa" data-aos="fade-left">
+        <h2>Local para Doações</h2>
+        <iframe src="https://www.google.com/maps/embed?..." width="100%" height="250" style="border: 0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p>
+          Endereço: Cidade Agrolândia, SC, CEP 88420-000, Rua Paraíso n.xxx
+        </p>
+      </div>
+    </div>
+    <div class="copy" data-aos="fade-up">
+      © 2025 ONG Connection. Todos os direitos reservados.
+    </div>
+  </footer>
+  <script src="../js/config.js"></script>
+  <script src="../js/script.js" defer></script>
+</body>
+</html>

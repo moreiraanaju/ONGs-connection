@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ONG Connection - Conectando Doadores e Causas Sociais</title>
+  <meta name="keywords" content="ONG, doações, causas sociais, doadores, engajamento, plataforma de doações, voluntariado, instituições"/>
+  <meta name="description" content="ONG Connection conecta doadores, voluntários e instituições para apoiar causas sociais de forma prática e segura."/>
+  <meta name="author" content="ONG Connection" />
+  <link rel="stylesheet" href="css/estilo.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <div class="container">
+      <div class="logo-container">
+        <img src="imagens/conection-logo.png" alt="Logo da ONG Connection" class="logo-img"/>
+        <h1 class="site-title">ONG Connection</h1>
+      </div>
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="html/Sobre.html">Sobre</a>
+        <a href="html/Instituicoes.html">Instituições(ONGs)</a>
+        <a href="html/Doar.html">Doe Agora</a>
+        <button class="btn" data-form="login">Entrar</button>
+      </nav>
+      <div id="form-login" class="formulario escondido">
+        <form id="login-form">
+          <h2>Login</h2>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="E-mail" required />
+          </div>
+          <div class="form-group">
+            <input type="password" id="senha" name="senha" placeholder="Senha" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Entrar</button>
+          <span id="login-error" class="error"></span>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main class="fundo-transparente">
+    <div class="form-background">
+      <div class="container busca-instituicoes" style="margin-top: 20px;">
+        <h2>Buscar Instituições</h2>
+        <input type="text" id="busca-instituicao" placeholder="Digite o nome da instituição" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" />
+        <button class="btn btn-primary" onclick="buscarInstituicao()" style="margin-top: 10px;">Buscar</button>
+        <div id="resultado-busca" style="margin-top: 15px;"></div>
+      </div>
+      <section class="secao" aria-labelledby="cadastro-title">
+        <h1 id="cadastro-title" class="visually-hidden">Cadastro</h1>
+        <div class="container botoes-cadastro">
+          <a href="html/CadastroDoador.html" class="btn btn-primary">Cadastro de Doador</a>
+          <a href="html/CadastroOng.html" class="btn btn-primary">Cadastro de Instituições(ONGs)</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="rodape">
+    <div class="container">
+      <div class="social-icons" data-aos="fade-right">
+        <h2>Contato</h2>
+        <a href="https://wa.me/5548999999999" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+        <a href="mailto:exemplo@email.com" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="E-mail"></a>
+        <a href="https://www.facebook.com/suaPagina" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/suaPagina" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
+      </div>
+      <div class="mapa" data-aos="fade-left">
+        <h2>Local para Doações</h2>
+        <iframe src="https://www.google.com/maps/embed?..." width="100%" height="250" style="border: 0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p>
+          Endereço: Cidade Agrolândia, SC, CEP 88420-000, Rua Paraíso n.xxx
+        </p>
+      </div>
+    </div>
+    <div class="copy" data-aos="fade-up">
+      © 2025 ONG Connection. Todos os direitos reservados.
+    </div>
+  </footer>
+  <script src="js/config.js"></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/Formulario.js" defer></script>
+</body>
+</html>

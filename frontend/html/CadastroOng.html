@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de ONG - ONG Connection</title>
+  <link rel="stylesheet" href="/css/CadastroOng.css" />
+  <link rel="stylesheet" href="../css/estilo.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <div class="container">
+      <div class="logo-container">
+        <img src="../imagens/conection-logo.png" alt="Logo da ONG Connection" class="logo-img"/>
+        <h1 class="site-title">ONG Connection</h1>
+      </div>
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="../index.html">Início</a>
+        <a href="Sobre.html">Sobre</a>
+        <a href="Instituicoes.html">Instituições(ONGs)</a>
+        <a href="Doar.html">Doe Agora</a>
+      </nav>
+    </div>
+  </header>
+  <main class="cadastro-ong">
+    <div class="container">
+      <h2>Cadastro de ONG</h2>
+      <form id="ong-form" novalidate>
+        <div class="form-group">
+          <label for="ong-nome"><span class="required">*</span>Nome da ONG:</label>
+          <input type="text" id="ong-nome" name="nome" placeholder="Nome da ONG" required />
+        </div>
+        <div class="form-group">
+          <label for="ong-cnpj"><span class="required">*</span>CNPJ:</label>
+          <input type="text" id="ong-cnpj" name="cnpj" placeholder="CNPJ (ex: 12345678000199)" required />
+          <small id="erro-cnpj" style="color:red;display:none;">CNPJ inválido</small>
+        </div>
+        <div class="form-group">
+          <label for="ong-descricao">Descrição:</label>
+          <textarea id="ong-descricao" name="descricao" placeholder="Descrição da ONG" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="ong-endereco"><span class="required">*</span>Endereço:</label>
+          <input type="text" id="ong-endereco" name="endereco" placeholder="Endereço" />
+        </div>
+        <div class="form-group">
+          <label for="ong-telefone"><span class="required">*</span>Telefone:</label>
+          <input type="tel" id="ong-telefone" name="telefone" placeholder="Telefone (ex: +5548999999999)" />
+        </div>
+        <div class="form-group">
+          <label for="ong-email"><span class="required">*</span>E-mail:</label>
+          <input type="email" id="ong-email" name="email" placeholder="E-mail" required />
+        </div>
+        <div class="form-group">
+          <label for="ong-site">Site:</label>
+          <input type="url" id="ong-site" name="site" placeholder="Site (ex: https://ong.org)" />
+        </div>
+        <div class="form-group">
+          <label for="ong-data-fundacao">Data de Fundação:</label>
+          <input type="date" id="ong-data-fundacao" name="data_fundacao" />
+        </div>
+        <div class="form-group">
+          <label for="ong-logo-url"><span class="required">*</span>URL do Logo:</label>
+          <input type="url" id="ong-logo-url" name="logo_url" placeholder="URL do Logo" />
+        </div>
+        <div class="form-group">
+          <label for="ong-areas-atuacao">Áreas de Atuação:</label>
+          <textarea id="ong-areas-atuacao" name="areas_atuacao" placeholder="Áreas de Atuação (ex: Educação, Saúde, Meio Ambiente)"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="senha"><span class="required">*</span>Senha:</label>
+          <input type="password" id="senha" name="senha" placeholder="Digite uma senha segura" required 
+          pattern="(?=.*[A-Z])[0-9]{5}" title="A senha deve conter uma letra maiúscula e 5 números, totalizando 6 caracteres." />
+          <span class="error" id="senha-error" style="display: none; color: red;">
+           A senha deve conter uma letra maiúscula e 5 números, totalizando 6 caracteres.
+          </span>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </main>
+  <footer class="rodape">
+    <div class="container">
+      <div class="social-icons" data-aos="fade-right">
+        <h2>Contato</h2>
+        <a href="https://wa.me/5548999999999" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+        <a href="mailto:exemplo@email.com" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="E-mail"></a>
+        <a href="https://www.facebook.com/suaPagina" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/suaPagina" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
+      </div>
+      <div class="mapa" data-aos="fade-left">
+        <h2>Local para Doações</h2>
+        <iframe src="https://www.google.com/maps/embed?..." width="100%" height="250" style="border: 0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p>
+          Endereço: Cidade Agrolândia, SC, CEP 88420-000, Rua Paraíso n.xxx
+        </p>
+      </div>
+    </div>
+    <div class="copy" data-aos="fade-up">
+      © 2025 ONG Connection. Todos os direitos reservados.
+    </div>
+  </footer>
+  <script src="../js/config.js"></script>
+  <script src="../js/script.js" defer></script>
+  <script src="../js/OnG.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/* CadastroDoador.css */
+.cadastro-doador {
+  background-color: var(--bg-color);
+  padding: 3rem 0;
+}
+
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-toggle {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.required {
+  color: red;
+  font-weight: bold;
+}
+
+.cadastro-doador .container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.cadastro-doador h2 {
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cadastro-doador .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.cadastro-doador label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.cadastro-doador input,
+.cadastro-doador select,
+.cadastro-doador textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.cadastro-doador input:focus,
+.cadastro-doador select:focus,
+.cadastro-doador textarea:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+}
+
+.cadastro-doador textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.cadastro-doador .btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-color);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.cadastro-doador .btn:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
