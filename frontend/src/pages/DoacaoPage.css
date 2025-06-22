@@ -1,0 +1,268 @@
+/* Página de Doação */
+.doar-page {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+}
+
+/* Conteúdo principal */
+.doacao-content {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Texto de introdução */
+.intro-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--primary-color);
+}
+
+/* Títulos */
+.doacao-methods h2,
+.doacao-form h2,
+.impact-section h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Cards de métodos */
+.methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.method-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.method-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.method-card h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.method-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.method-card .btn {
+  margin-top: 1rem;
+}
+
+/* Formulário de doação */
+.doacao-form {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 3rem auto;
+}
+
+.doacao-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.doacao-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-align: left; 
+}
+
+.doacao-form input[type="text"],
+.doacao-form input[type="email"],
+.doacao-form input[type="number"],
+.doacao-form select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doacao-form input:focus,
+.doacao-form select:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+/* Botões */
+.btn,
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover,
+.btn-primary:hover {
+  background-color: #406c3b;
+  color: var(--white);
+}
+
+/* Mensagens de erro */
+.error {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* Form row - lado a lado */
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* PIX */
+.pix-info {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-left: 4px solid var(--secondary-color);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.pix-info strong {
+  display: block;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: var(--accent-color);
+}
+
+/* Seção de impacto */
+.impact-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.impact-section p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+/* Cards de estatísticas */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.stat-card p {
+  font-size: 1.1rem;
+  color: var(--white);
+}
+.required {
+  color: red;
+  margin-left: 4px;
+}
+.doacao-beneficios {
+  background-color: var(--white); /* Fundo branco para a seção */
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Largura máxima para a seção */
+  margin: 3rem auto; /* Centraliza e adiciona margem */
+  text-align: center; /* Centraliza o texto */
+}
+
+.doacao-beneficios h2 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.8rem;
+}
+
+.doacao-beneficios ul {
+  list-style: none; /* Remove os marcadores de lista padrão */
+  padding: 0;
+  margin: 0;
+  text-align: left; /* Alinha os itens da lista à esquerda */
+  max-width: 600px; /* Limita a largura da lista */
+  margin: 0 auto; /* Centraliza a lista */
+}
+
+.doacao-beneficios li {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 1rem; /* Espaço entre os itens da lista */
+  padding-left: 1.5rem; /* Espaço para o ícone customizado */
+  position: relative; /* Para posicionar o ícone */
+}
+
+.doacao-beneficios li::before {
+  content: '✔'; /* Ícone de checkmark como marcador */
+  color: var(--accent-color); /* Cor do ícone */
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

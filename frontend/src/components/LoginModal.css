@@ -1,0 +1,95 @@
+
+.modal-overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 1000; 
+}
+
+/* Estilos para o conteúdo principal do modal */
+.modal-content {
+  background-color: #fff; 
+  padding: 30px; 
+  border-radius: 8px; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+/* Estilos para o botão de fechar do modal */
+.modal-close-btn {
+  position: absolute; 
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none; 
+  font-size: 1.5rem; 
+  cursor: pointer; 
+  color: #333; 
+  padding: 5px; 
+}
+
+.modal-close-btn:hover {
+  color: #c00; 
+}
+
+/* Estilos para o título do formulário dentro do modal */
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50; 
+}
+
+/* Estilos para mensagens de erro */
+.error-message {
+  color: #e74c3c; 
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+/* Estilos para grupos de formulário */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Estilos para inputs do formulário */
+.modal-content input[type="email"],
+.modal-content input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+/* Estilos para o botão de submissão (login) */
+.modal-content .btn {
+  display: block; 
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.modal-content .btn-primary {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.modal-content .btn-primary:hover {
+  background-color: #2980b9;
+}

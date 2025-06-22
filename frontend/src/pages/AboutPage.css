@@ -1,0 +1,167 @@
+/* frontend/ongs-connection-main/src/pages/AboutPage.css */
+/* Conteúdo de Sobre.css */
+.sobre-page {
+  background-color: var(--bg-color);
+}
+
+/* O background-image para .hero será gerenciado via React no componente */
+.hero {
+  background-position: center;
+  background-size: cover; /* Adicione isso para garantir que a imagem cubra a área */
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  color: var(--white);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.sobre-content {
+  padding: 3rem 0;
+  background-color: var(--white); /* Adicione background para o conteúdo para contraste */
+}
+
+.sobre-content h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.sobre-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto; /* Centraliza parágrafos e adiciona margem inferior */
+  text-align: center; /* Centraliza o texto dos parágrafos */
+}
+
+/* Estilos para a nova lista (Nossos Valores) */
+.sobre-content ul {
+  list-style: none; /* Remove os marcadores de lista padrão */
+  padding: 0;
+  margin: 2rem auto; /* Centraliza a lista e adiciona margem */
+  max-width: 700px; /* Limita a largura da lista para melhor leitura */
+}
+
+.sobre-content li {
+  background-color: #f9f9f9; /* Fundo suave para cada item */
+  border-left: 5px solid var(--secondary-color); /* Uma barra colorida à esquerda */
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1rem; /* Espaço entre os itens da lista */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra leve */
+  text-align: left; /* Alinha o texto à esquerda dentro do item */
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sobre-content li:hover {
+  transform: translateY(-3px); /* Efeito de elevação ao passar o mouse */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-content li strong {
+  color: var(--primary-color); /* Cor mais escura para o título do valor */
+  display: block; /* Garante que o título fique em sua própria linha ou ocupe todo o espaço */
+  margin-bottom: 0.5rem; /* Espaço entre o título do valor e a descrição */
+  font-size: 1.15rem; /* Um pouco maior para o título do valor */
+}
+
+/* Botões CTA na parte inferior */
+.cta-buttons {
+  text-align: center;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Espaçamento entre os botões */
+}
+
+.cta-buttons .btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-buttons .btn-primary {
+  background-color: var(--accent-color);
+  color: var(--white);
+  border: none;
+}
+
+.cta-buttons .btn-primary:hover {
+  background-color: #406c3b; /* Variação escura do verde */
+}
+
+.cta-buttons .btn:not(.btn-primary) { /* Estilo para o segundo botão */
+  background-color: var(--white);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.cta-buttons .btn:not(.btn-primary):hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .sobre-content {
+    padding: 2rem 1rem;
+  }
+
+  .sobre-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .sobre-content p {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column; /* Botões empilham em telas menores */
+    align-items: center;
+  }
+
+  .cta-buttons .btn {
+    width: 90%; /* Botões ocupam mais largura */
+    max-width: 300px;
+  }
+}

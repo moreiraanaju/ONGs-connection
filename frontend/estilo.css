@@ -1,0 +1,43 @@
+body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    #resultado-busca div {
+      padding: 10px;
+      background-color: #e6f0ff;
+      border-radius: 5px;
+      margin-bottom: 8px;
+    }
+
+    .paginacao {
+      margin-top: 20px;
+    }
+
+    .paginacao button {
+      margin: 0 5px;
+    }

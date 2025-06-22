@@ -1,0 +1,172 @@
+/* ======== Definição de Variáveis CSS Globais ======== */
+:root {
+  --bg-color: #f0f2f5; /* Cor de fundo padrão, um cinza claro */
+  --primary-color: #2c3e50; /* Cor principal, um azul escuro */
+  --primary-color-dark: #1a242f; /* Variação mais escura da cor principal */
+  --secondary-color: #3498db; /* Cor secundária, um azul vibrante */
+  --accent-color: #2ecc71; /* Cor de destaque, um verde */
+  --white: #ffffff; /* Cor branca */
+  --text-color: #333; /* Cor padrão para textos */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra padrão para elementos */
+}
+
+/* ======== Base ======== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* ======== Container do Formulário ======== */
+.cadastro-doador,
+.cadastro-ong {
+  background-color: var(--bg-color);
+  padding: 3rem 0;
+}
+
+.cadastro-doador .container,
+.cadastro-ong .container {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* ======== Título ======== */
+.cadastro-doador h2,
+.cadastro-ong h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ======== Labels alinhados à esquerda ======== */
+.cadastro-doador label,
+.cadastro-ong label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-align: left; 
+}
+
+/* ======== Grupos de campos ======== */
+.cadastro-doador .form-group,
+.cadastro-ong .form-group {
+  margin-bottom: 1.5rem;
+  text-align: left; 
+}
+
+/* ======== Campos ======== */
+.cadastro-doador input,
+.cadastro-doador select,
+.cadastro-doador textarea,
+.cadastro-ong input,
+.cadastro-ong select,
+.cadastro-ong textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cadastro-doador input:focus,
+.cadastro-doador select:focus,
+.cadastro-doador textarea:focus,
+.cadastro-ong input:focus,
+.cadastro-ong select:focus,
+.cadastro-ong textarea:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* ======== Mensagens ======== */
+.required {
+  color: red;
+  font-weight: bold;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+/* ======== Botões ======== */
+.btn.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+  background-color: var(--primary-color-dark);
+}
+
+/* ======== Dropdown Customizado ======== */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-toggle {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* ======== Responsivo ======== */
+@media (max-width: 768px) {
+  .cadastro-doador .container,
+  .cadastro-ong .container {
+    padding: 2rem;
+  }
+
+  .cadastro-doador h2,
+  .cadastro-ong h2 {
+    font-size: 1.6rem;
+  }
+}

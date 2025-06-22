@@ -1,0 +1,9 @@
+.error-message-container {
+  background-color: #ffe0e0;
+  border: 1px solid #ff4d4d;
+  color: #cc0000;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}

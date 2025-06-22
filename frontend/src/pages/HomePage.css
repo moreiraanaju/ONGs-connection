@@ -1,0 +1,269 @@
+/* frontend/ongs-connection-main/src/pages/HomePage.css */
+
+/* Seção Hero (já existente, mantendo e talvez ajustando levemente) */
+.hero {
+  background-color: var(--primary-color); /* Usando uma cor do seu tema */
+  color: var(--white);
+  padding: 5rem 1rem; /* Mais padding para destaque */
+  text-align: center;
+  border-radius: 0 0 25px 25px; /* Bordas arredondadas na parte inferior */
+  box-shadow: var(--shadow); /* Sombra para profundidade */
+  margin-bottom: 3rem; /* Adiciona margem entre o hero e a seção de busca */
+}
+
+.hero h2 {
+  font-size: 3.2rem; /* Título maior e mais impactante */
+  color: var(--white); /* Cor branca para o título no hero */
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.05rem; /* Ajuste para letras mais próximas */
+}
+
+.hero p {
+  font-size: 1.3rem; /* Texto de parágrafo maior */
+  color: #e0e0e0; /* Um cinza claro para o texto */
+  max-width: 700px;
+  margin: 0 auto 3rem auto; /* Centraliza e adiciona mais margem abaixo */
+  line-height: 1.7;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem; /* Aumenta o espaço entre os botões */
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  min-width: 200px;
+  padding: 1rem 2rem; /* Ajustado para ser mais consistente com o btn-secondary */
+  font-size: 1.1rem; /* Ajustado para ser mais consistente com o btn-secondary */
+}
+
+/* Seção de Busca (ajustes de padding e alinhamento) */
+.search-section {
+  padding: 3rem 1rem; /* Padding em todas as direções */
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  max-width: 900px; /* Limita a largura */
+  margin: 3rem auto; /* Centraliza e adiciona margem */
+}
+
+.search-section h3 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Estilos para a grade de resultados */
+.resultados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.resultado-item {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Garante que o botão fique no final */
+}
+
+.resultado-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.resultado-item h3 {
+  color: var(--primary-color);
+  font-size: 1.7rem;
+  margin-top: 0;
+  margin-bottom: 1rem; /* Espaçamento abaixo do título */
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary-color); /* Linha divisória */
+}
+
+.resultado-item p {
+  font-size: 1.05rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.resultado-item p strong {
+  color: var(--secondary-color); /* Destaca a causa e localização */
+}
+
+.resultado-item a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.resultado-item a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.resultado-item .btn.btn-primary.btn-sm {
+  margin-top: 1rem; /* Espaço acima do botão "Saiba Mais" */
+  align-self: flex-start; /* Alinha o botão à esquerda */
+  padding: 0.75rem 1.2rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+}
+
+/* Estilos para mensagens de feedback (loading, error, no-results) */
+#resultado-busca {
+  margin-top: 15px;
+}
+
+.search-section .loading,
+.search-section .error,
+.search-section .no-results {
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  max-width: 600px; /* Limita a largura da mensagem */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: var(--shadow); /* Sombra para as mensagens */
+}
+
+.search-section .loading {
+  background-color: #e0f2f7; /* Azul claro */
+  color: #2196f3;
+  border: 1px solid #90caf9;
+}
+
+.search-section .error {
+  background-color: #ffebee; /* Vermelho claro */
+  color: #e74c3c;
+  border: 1px solid #ef9a9a;
+}
+
+.search-section .no-results { /* Removido .no-ongs-message daqui */
+  background-color: #fffde7; /* Amarelo muito claro */
+  color: #fbc02d;
+  border: 1px solid #ffee58;
+}
+
+/* Nova Seção de Texto Motivacional */
+.motivational-section {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin: 3rem auto; /* Centraliza e adiciona margem */
+  max-width: 900px; /* Limita a largura */
+}
+
+.motivational-section h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.motivational-section p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto; /* Centraliza e adiciona margem abaixo */
+}
+
+.motivational-section .cta-buttons {
+  margin-top: 2rem; /* Espaçamento acima dos botões */
+  justify-content: center; /* Centraliza os botões */
+  gap: 1.5rem;
+}
+
+/* Novo estilo para um botão secundário */
+.btn-secondary {
+  background-color: var(--secondary-color); /* Usando a cor secundária */
+  color: var(--white);
+  border: 2px solid var(--secondary-color);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  text-decoration: none; /* Para usar em <Link> */
+  display: inline-block; /* Para o padding e margem funcionarem */
+  min-width: 180px; /* Para consistência com o btn-primary */
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color); /* Fundo primary no hover */
+  border-color: var(--primary-color); /* Borda primary no hover */
+  color: var(--white);
+}
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column; /* Botões empilhados em telas menores */
+    align-items: center;
+  }
+
+  .search-section h3 {
+    font-size: 1.8rem;
+  }
+
+  .resultados-grid {
+    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+  }
+
+  .resultado-item {
+    padding: 1rem;
+  }
+
+  .resultado-item h3 {
+    font-size: 1.5rem;
+  }
+
+  .search-section .loading,
+  .search-section .error,
+  .search-section .no-results {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  /* Media Queries para a nova seção (ajuste se necessário) */
+  .motivational-section h2 {
+    font-size: 2rem;
+  }
+  .motivational-section p {
+    font-size: 1rem;
+  }
+  .motivational-section .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .motivational-section .cta-buttons .btn,
+  .motivational-section .cta-buttons .btn-secondary {
+    width: 100%;
+    max-width: 300px; /* Limita a largura máxima dos botões empilhados */
+  }
+}

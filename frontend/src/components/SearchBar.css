@@ -1,0 +1,55 @@
+
+/* Estilos para o container da barra de pesquisa */
+.search-bar {
+  display: flex; 
+  gap: 10px; 
+  margin-bottom: 20px; 
+  padding: 15px;
+  background-color: #f8f8f8; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: center; 
+}
+
+/* Estilos para o campo de input da pesquisa */
+.search-bar input[type="text"] {
+  flex-grow: 1; 
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input[type="text"]:focus {
+  border-color: var(--secondary-color, #3498db); 
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); 
+  outline: none; 
+}
+
+/* Estilos para o botão de busca */
+.search-bar .btn {
+  padding: 10px 20px;
+  background-color: var(--primary-color, #2c3e50); 
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar .btn:hover {
+  background-color: var(--secondary-color, #3498db); 
+}
+
+/* Estilos para responsividade básica, se necessário */
+@media (max-width: 600px) {
+  .search-bar {
+    flex-direction: column; 
+    align-items: stretch; 
+  }
+
+  .search-bar input[type="text"],
+  .search-bar .btn {
+    width: 100%;
+}};
