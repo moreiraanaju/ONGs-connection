@@ -7,7 +7,7 @@
 /* O background-image para .hero será gerenciado via React no componente */
 .hero {
   background-position: center;
-  background-size: cover; /* Adicione isso para garantir que a imagem cubra a área */
+  background-size: cover; 
   padding: 4rem 0;
   text-align: center;
   position: relative;
@@ -42,7 +42,7 @@
 
 .sobre-content {
   padding: 3rem 0;
-  background-color: var(--white); /* Adicione background para o conteúdo para contraste */
+  background-color: var(--white); 
 }
 
 .sobre-content h2 {
@@ -57,26 +57,26 @@
   line-height: 1.8;
   color: var(--text-color);
   max-width: 800px;
-  margin: 0 auto 1.5rem auto; /* Centraliza parágrafos e adiciona margem inferior */
-  text-align: center; /* Centraliza o texto dos parágrafos */
+  margin: 0 auto 1.5rem auto;
+  text-align: center; 
 }
 
 /* Estilos para a nova lista (Nossos Valores) */
 .sobre-content ul {
-  list-style: none; /* Remove os marcadores de lista padrão */
+  list-style: none;
   padding: 0;
-  margin: 2rem auto; /* Centraliza a lista e adiciona margem */
-  max-width: 700px; /* Limita a largura da lista para melhor leitura */
+  margin: 2rem auto; 
+  max-width: 700px; 
 }
 
 .sobre-content li {
-  background-color: #f9f9f9; /* Fundo suave para cada item */
-  border-left: 5px solid var(--secondary-color); /* Uma barra colorida à esquerda */
+  background-color: #f9f9f9; 
+  border-left: 5px solid var(--secondary-color); 
   padding: 1.2rem 1.5rem;
-  margin-bottom: 1rem; /* Espaço entre os itens da lista */
+  margin-bottom: 1rem; 
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra leve */
-  text-align: left; /* Alinha o texto à esquerda dentro do item */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
+  text-align: left; 
   font-size: 1.05rem;
   line-height: 1.6;
   color: var(--text-color);
@@ -84,15 +84,15 @@
 }
 
 .sobre-content li:hover {
-  transform: translateY(-3px); /* Efeito de elevação ao passar o mouse */
+  transform: translateY(-3px); 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .sobre-content li strong {
-  color: var(--primary-color); /* Cor mais escura para o título do valor */
-  display: block; /* Garante que o título fique em sua própria linha ou ocupe todo o espaço */
-  margin-bottom: 0.5rem; /* Espaço entre o título do valor e a descrição */
-  font-size: 1.15rem; /* Um pouco maior para o título do valor */
+  color: var(--primary-color); 
+  display: block; 
+  margin-bottom: 0.5rem; 
+  font-size: 1.15rem; 
 }
 
 /* Botões CTA na parte inferior */
@@ -101,7 +101,7 @@
   margin-top: 3rem;
   display: flex;
   justify-content: center;
-  gap: 1.5rem; /* Espaçamento entre os botões */
+  gap: 1.5rem; 
 }
 
 .cta-buttons .btn {
@@ -119,10 +119,10 @@
 }
 
 .cta-buttons .btn-primary:hover {
-  background-color: #406c3b; /* Variação escura do verde */
+  background-color: #406c3b; 
 }
 
-.cta-buttons .btn:not(.btn-primary) { /* Estilo para o segundo botão */
+.cta-buttons .btn:not(.btn-primary) { 
   background-color: var(--white);
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
@@ -156,12 +156,12 @@
   }
 
   .cta-buttons {
-    flex-direction: column; /* Botões empilham em telas menores */
+    flex-direction: column; 
     align-items: center;
   }
 
   .cta-buttons .btn {
-    width: 90%; /* Botões ocupam mais largura */
+    width: 90%; 
     max-width: 300px;
   }
 }

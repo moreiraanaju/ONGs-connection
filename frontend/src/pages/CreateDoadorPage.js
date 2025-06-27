@@ -1,9 +1,10 @@
 // frontend/ongs-connection-main/src/pages/CreateDoadorPage.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 import { validarCPF } from "../utils/validation"; // Importe suas funções de validação
 import { createDoador } from "../api/ongApi"; // Importa a função de criação de doador
-import './global.css';// Importe o CSS específico
+import "./global.css"; // Importe o CSS específico
 
 function CreateDoadorPage() {
   const [formData, setFormData] = useState({
@@ -19,6 +20,7 @@ function CreateDoadorPage() {
   });
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,26 +56,28 @@ function CreateDoadorPage() {
       try {
         // Remove confirmarSenha antes de enviar, pois geralmente não é armazenada no banco de dados
         const { confirmarSenha, ...dataToSend } = formData;
-        
-        // CORREÇÃO AQUI: Descomentar e chamar a função createDoador
-        // O `createDoador` que você importou do `ongApi` é para ONGs.
-        // Você precisará de uma função `createDoador` no seu `ongApi.js` (ou `doadorApi.js`)
-        // que faça a requisição POST para o endpoint de doadores do seu backend.
-        
-        // *** IMPORTANTE: Você está importando 'createDoador' de 'ongApi',
-        // mas seu `ongApi.js` exporta `createOng` e `getOngs`.
-        // Você precisará criar uma função `createDoador` no `ongApi.js`
-        // ou criar um novo arquivo como `doadorApi.js` para isso.
-        // Abaixo, vou assumir que você a criou no ongApi.js para fins de exemplo. ***
 
-        const response = await createDoador(dataToSend); // CHAMA A FUNÇÃO API AQUI
+        const response = await createDoador(dataToSend);
         console.log("Doador cadastrado com sucesso:", response);
-        alert("Cadastro de doador realizado com sucesso!");
-        navigate("/perfil-doador"); // Redireciona para a página pessoal ou login
+
+        // Fazer login automático após cadastro bem-sucedido
+        const userData = {
+          ...response,
+          tipo: "DOADOR",
+          id: response.id || Date.now(), // Fallback para ID se não retornado pela API
+        };
+
+        login(userData);
+        alert(
+          "Cadastro realizado com sucesso! Você foi automaticamente logado."
+        );
+        navigate("/perfil-doador"); // Redireciona para a página pessoal
       } catch (err) {
         console.error("Erro ao cadastrar doador:", err);
         // Exibe uma mensagem de erro mais útil para o usuário
-        setErrors({ form: err.message || "Erro ao cadastrar doador. Tente novamente." });
+        setErrors({
+          form: err.message || "Erro ao cadastrar doador. Tente novamente.",
+        });
       }
     } else {
       setErrors((prev) => ({

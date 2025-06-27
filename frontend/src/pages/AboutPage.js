@@ -1,9 +1,7 @@
-// frontend/ongs-connection-main/src/pages/AboutPage.js
 import React from 'react';
-import './AboutPage.css'; // Importe o CSS específico
+import './AboutPage.css'; 
 import doacao2Img from '../assets/Doacao2.jpg';
-// Importe a imagem diretamente para que o Webpack a processe
-// Certifique-se de que Doação2.jpg está em src/assets/
+
 
 function AboutPage() {
   return (

@@ -7,7 +7,7 @@ function SearchBar({ onSearch }) {
 
   const handleSearch = () => {
     const trimmedTerm = searchTerm.trim();
-    if (onSearch) { // Sempre notifica o pai, mesmo que o termo seja vazio para limpar resultados
+    if (onSearch) { 
       onSearch(trimmedTerm);
     }
   };

@@ -1,31 +1,40 @@
-import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import LoginModal from './LoginModal';
-import logo from '../assets/conection-logo.png'; 
-import './Header.css';
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+import LoginModal from "./LoginModal";
+import logo from "../assets/conection-logo.png";
+import "./Header.css";
 
 function Header() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const { user, logout, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   const handleLoginSuccess = (userData) => {
-    console.log('Login bem-sucedido:', userData);
-    setIsLoginModalOpen(false); 
-    alert(`Bem-vindo(a), ${userData.email || 'Usuário'}!`);
+    console.log("Login bem-sucedido:", userData);
+    setIsLoginModalOpen(false);
+    alert(`Bem-vindo(a), ${userData.email || "Usuário"}!`);
   };
 
   const handleLogout = () => {
-    
-    alert('Você foi desconectado.');
-    navigate('/'); 
+    logout();
+    alert("Você foi desconectado.");
+    navigate("/");
   };
 
   const handleCloseLoginModal = () => {
     setIsLoginModalOpen(false);
   };
 
+  const handleProfileClick = () => {
+    if (user && user.tipo === "ONG") {
+      navigate("/perfil-ong");
+    } else {
+      navigate("/perfil-doador");
+    }
+  };
+
   return (
-    
     <header className="top">
       <div className="container">
         <div className="logo-container">
@@ -37,10 +46,25 @@ function Header() {
           <Link to="/sobre">Sobre</Link>
           <Link to="/Instituicoes">Instituições (ONGs)</Link>
           <Link to="/doar">Doe Agora</Link>
-          <Link to="/cadastro-doador">Cadastrar Doador</Link>
-          <Link to="/cadastro-ong">Cadastrar ONG</Link>
 
-          <button className="btn" onClick={() => setIsLoginModalOpen(true)}>Entrar</button>
+          {!isAuthenticated ? (
+            <>
+              <Link to="/cadastro-doador">Cadastrar Doador</Link>
+              <Link to="/cadastro-ong">Cadastrar ONG</Link>
+              <button className="btn" onClick={() => setIsLoginModalOpen(true)}>
+                Entrar
+              </button>
+            </>
+          ) : (
+            <>
+              <button className="btn btn-profile" onClick={handleProfileClick}>
+                Meu Perfil
+              </button>
+              <button className="btn" onClick={handleLogout}>
+                Sair
+              </button>
+            </>
+          )}
         </nav>
       </div>
 

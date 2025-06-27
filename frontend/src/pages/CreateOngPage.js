@@ -1,14 +1,16 @@
 // frontend/ongs-connection-main/src/pages/CreateOngPage.js
 
 import React, { useState } from "react";
-import { createOng } from "../api/ongApi"; // Certifique-se que ongApi.js está pronto para receber todos os campos
+import { createOng } from "../api/ongApi"; 
 import ErrorMessage from "../components/ErrorMessage";
 import { useNavigate } from "react-router-dom";
-import "./Pages.css"; // Estilos gerais das páginas
-import './global.css'
+import { useAuth } from "../contexts/AuthContext";
+import "./Pages.css"; 
+import "./global.css";
 
 function CreateOngPage() {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [formData, setFormData] = useState({
     nome: "",
     cnpj: "",
@@ -21,7 +23,7 @@ function CreateOngPage() {
     endereco_estado: "",
     endereco_cep: "",
     missao: "",
-    areas_atuacao: "", // Pode ser uma string separada por vírgulas, ou um array se o backend aceitar
+    areas_atuacao: "",
     data_fundacao: "",
     site: "",
     senha: "",
@@ -38,7 +40,7 @@ function CreateOngPage() {
   };
 
   const validateForm = () => {
-    setError(null); // Limpa erros anteriores
+    setError(null); 
 
     if (!formData.nome.trim()) {
       setError("O nome da ONG é obrigatório.");
@@ -48,8 +50,13 @@ function CreateOngPage() {
       setError("O CNPJ é obrigatório.");
       return false;
     }
-    if (!/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/.test(formData.cnpj) && !/^\d{14}$/.test(formData.cnpj)) {
-      setError("Formato de CNPJ inválido. Use 14 dígitos ou XX.XXX.XXX/YYYY-ZZ.");
+    if (
+      !/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/.test(formData.cnpj) &&
+      !/^\d{14}$/.test(formData.cnpj)
+    ) {
+      setError(
+        "Formato de CNPJ inválido. Use 14 dígitos ou XX.XXX.XXX/YYYY-ZZ."
+      );
       return false;
     }
     if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) {
@@ -60,7 +67,14 @@ function CreateOngPage() {
       setError("O telefone é obrigatório.");
       return false;
     }
-    if (!formData.endereco_rua.trim() || !formData.endereco_numero.trim() || !formData.endereco_bairro.trim() || !formData.endereco_cidade.trim() || !formData.endereco_estado.trim() || !formData.endereco_cep.trim()) {
+    if (
+      !formData.endereco_rua.trim() ||
+      !formData.endereco_numero.trim() ||
+      !formData.endereco_bairro.trim() ||
+      !formData.endereco_cidade.trim() ||
+      !formData.endereco_estado.trim() ||
+      !formData.endereco_cep.trim()
+    ) {
       setError("Todos os campos de endereço são obrigatórios.");
       return false;
     }
@@ -69,18 +83,18 @@ function CreateOngPage() {
       return false;
     }
     if (!formData.areas_atuacao.trim()) {
-        setError("As áreas de atuação são obrigatórias.");
-        return false;
+      setError("As áreas de atuação são obrigatórias.");
+      return false;
     }
     if (!formData.data_fundacao.trim()) {
-        setError("A data de fundação é obrigatória.");
-        return false;
+      setError("A data de fundação é obrigatória.");
+      return false;
     }
     if (!formData.senha.trim()) {
       setError("A senha é obrigatória.");
       return false;
     }
-    if (formData.senha.length < 6) { // Exemplo de validação de senha
+    if (formData.senha.length < 6) {
       setError("A senha deve ter no mínimo 6 caracteres.");
       return false;
     }
@@ -106,10 +120,19 @@ function CreateOngPage() {
       const { confirmar_senha, ...dataToSend } = formData;
       const response = await createOng(dataToSend);
       console.log("ONG cadastrada com sucesso:", response);
+
+      // Fazer login automático após cadastro bem-sucedido
+      const userData = {
+        ...response,
+        tipo: "ONG",
+        id: response.id || Date.now(), // Fallback para ID se não retornado pela API
+      };
+
+      login(userData);
       setSuccess(true);
       setError(null);
-      alert("ONG cadastrada com sucesso!");
-      navigate("/"); // Redireciona para a página inicial ou de sucesso
+      alert("ONG cadastrada com sucesso! Você foi automaticamente logado.");
+      navigate("/perfil-ong"); // Redireciona para a página pessoal da ONG
     } catch (err) {
       console.error("Erro ao cadastrar ONG:", err);
       setError(err.message || "Erro ao cadastrar ONG. Tente novamente.");
@@ -131,7 +154,9 @@ function CreateOngPage() {
         )}
         <form onSubmit={handleSubmit} noValidate>
           <div className="form-group">
-            <label htmlFor="nome">Nome da ONG: <span className="required">*</span></label>
+            <label htmlFor="nome">
+              Nome da ONG: <span className="required">*</span>
+            </label>
             <input
               type="text"
               id="nome"
@@ -144,7 +169,9 @@ function CreateOngPage() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="cnpj">CNPJ: <span className="required">*</span></label>
+            <label htmlFor="cnpj">
+              CNPJ: <span className="required">*</span>
+            </label>
             <input
               type="text"
               id="cnpj"
@@ -158,7 +185,9 @@ function CreateOngPage() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">E-mail: <span className="required">*</span></label>
+            <label htmlFor="email">
+              E-mail: <span className="required">*</span>
+            </label>
             <input
               type="email"
               id="email"
@@ -171,7 +200,9 @@ function CreateOngPage() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="telefone">Telefone: <span className="required">*</span></label>
+            <label htmlFor="telefone">
+              Telefone: <span className="required">*</span>
+            </label>
             <input
               type="text"
               id="telefone"
@@ -185,7 +216,9 @@ function CreateOngPage() {
           </div>
 
           <div className="form-group">
-            <label>Endereço: <span className="required">*</span></label>
+            <label>
+              Endereço: <span className="required">*</span>
+            </label>
             <input
               type="text"
               name="endereco_rua"
@@ -250,7 +283,9 @@ function CreateOngPage() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="missao">Missão da ONG: <span className="required">*</span></label>
+            <label htmlFor="missao">
+              Missão da ONG: <span className="required">*</span>
+            </label>
             <textarea
               id="missao"
               name="missao"
@@ -263,7 +298,10 @@ function CreateOngPage() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="areas_atuacao">Áreas de Atuação (separar por vírgulas): <span className="required">*</span></label>
+            <label htmlFor="areas_atuacao">
+              Áreas de Atuação (separar por vírgulas):{" "}
+              <span className="required">*</span>
+            </label>
             <input
               type="text"
               id="areas_atuacao"
@@ -277,7 +315,9 @@ function CreateOngPage() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="data_fundacao">Data de Fundação: <span className="required">*</span></label>
+            <label htmlFor="data_fundacao">
+              Data de Fundação: <span className="required">*</span>
+            </label>
             <input
               type="date"
               id="data_fundacao"
@@ -302,7 +342,9 @@ function CreateOngPage() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="senha">Senha: <span className="required">*</span></label>
+            <label htmlFor="senha">
+              Senha: <span className="required">*</span>
+            </label>
             <input
               type="password"
               id="senha"
@@ -315,7 +357,9 @@ function CreateOngPage() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="confirmar_senha">Confirmar Senha: <span className="required">*</span></label>
+            <label htmlFor="confirmar_senha">
+              Confirmar Senha: <span className="required">*</span>
+            </label>
             <input
               type="password"
               id="confirmar_senha"

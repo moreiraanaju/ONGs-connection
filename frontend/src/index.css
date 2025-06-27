@@ -24,15 +24,14 @@ body {
   background-color: var(--bg-color);
 }
 
-/* ... continue colando o restante do estilo.css aqui ... */
 
-.container { /* Já estava no estilo.css, manter */
+
+.container { 
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Adicionar estilos gerais para botões e formulários se não estiverem no estilo.css */
 .btn {
   background-color: var(--secondary-color);
   color: var(--white);

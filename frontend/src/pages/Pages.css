@@ -37,7 +37,7 @@
 .secondary-button {
   background-color: #6c757d;
   color: white;
-  margin-left: 15px; /* Para botões lado a lado */
+  margin-left: 15px; 
 }
 
 .secondary-button:hover {
@@ -125,11 +125,11 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1em;
-  box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura */
+  box-sizing: border-box; 
 }
 
 .form-group textarea {
-  resize: vertical; /* Permite redimensionar verticalmente */
+  resize: vertical; 
   min-height: 80px;
 }
 
@@ -141,7 +141,7 @@
 }
 
 .ong-form button {
-  align-self: flex-start; /* Alinha o botão à esquerda */
+  align-self: flex-start; 
   margin-top: 20px;
 }
 
